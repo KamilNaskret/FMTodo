@@ -20,7 +20,6 @@ const changeTheme = (e) => {
         e.target.setAttribute("src",paths[0]);
         wrapper.classList.remove("light");
     }
-    console.log(wrapper);
 }
 // Event Listener
 button.addEventListener('click',changeTheme);
@@ -59,7 +58,7 @@ class Todo{
                 e.target.closest(".main__list-todo").remove();
                 this.getItems();
                 const arr = story.getFromStory();
-                const deleteElement = arr.splice(deletebtn.indexOf(e.target.parentElement),deletebtn.indexOf(e.target.parentElement)+1);
+                arr.splice(deletebtn.indexOf(e.target.parentElement),deletebtn.indexOf(e.target.parentElement)+1);
                 localStorage.setItem("storageItems",JSON.stringify(arr));
             })
         });
@@ -102,6 +101,7 @@ const all = document.querySelector("[data-all]");
 
 const todoApp = new Todo();
 const story = new Story();
+
 
 // Event Listener
 
@@ -149,12 +149,12 @@ form.addEventListener('submit',(e) => {
     const value = e.target.children[1].value;
     if(value){
         todoApp.addTodo(value);
-        story.addStory(value);
         todoApp.clearInput();
         todoApp.isComplete();
+        todoApp.delete();
+        story.addStory(value);
         items.innerHTML=todoApp.getItems();
         succes.style.backgroundColor="green";
-        todoApp.delete();
     }else{
         succes.style.backgroundColor="red";
     }

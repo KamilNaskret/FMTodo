@@ -6,4 +6,30 @@ $font-weights:(
     "normal":400,
     "bold":700
 );
+$background-colors:(
+    "white":white,
+    "black":black,
+    "gray":hsl(0, 0%, 85%),
+    "trans":transparent,
+    "darkgray":hsl(235, 24%, 19%)
+);
+$colors:(
+    "main":hsl(235, 19%, 35%),
+    "second":white,
+    "border":hsl(233, 14%, 35%),
+    "third":#777a92,
+    "btn":hsl(234, 39%, 85%)
+);
+
+@mixin flex($direction,$align,$justify){
+    flex-direction:$direction;
+    align-items:$align;
+    justify-content: $justify;
+}
+@mixin buttons{
+    border:none;
+    cursor:pointer;
+    outline:none;
+}
 $mainFont:18px;
+$mainSize:10px;

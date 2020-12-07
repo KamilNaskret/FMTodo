@@ -4,16 +4,14 @@
     min-height:80vh;
     z-index:1;
     margin:0 auto;
-    // background-color: red;
     &__form{
         display:flex;
-        flex-direction: column;
-        margin-bottom:10px;
+        @include flex(column,stretch,stretch);
+        margin-bottom:$mainSize;
         height:20%;
         .form__header{
             display:flex;
-            justify-content: space-between;
-            align-items:center;
+            @include flex(row,center,space-between);
             padding:15px;
             &-title{
                 letter-spacing:6px;
@@ -21,9 +19,8 @@
                 font-size:$mainFont*2;
             }
             &-theme{
-                background-color: transparent;
-                border:none;
-                cursor:pointer;
+                background-color: map-get($background-colors,"trans");
+                @include buttons;
                 height:30px;
                 transition: .3s;
                 &:hover img{
@@ -32,8 +29,9 @@
             }
         }
         .form__container{
-            background-color:hsl(235, 24%, 19%);
-            padding:10px;
+            background-color: map-get($background-colors,"darkgray");
+            padding:$mainSize;
+            border-radius:5px;
             flex-grow:1;
             &-add{
                 display:flex;
@@ -43,15 +41,15 @@
             &-check{
                 height:20px;
                 width:20px;
-                border:1px solid hsl(233, 14%, 35%);
+                border:1px solid map-get($colors,"border");
                 border-radius: 50%;
-                background-color: transparent;
+                background-color: map-get($background-colors,"trans");
                 cursor:pointer;
             }
             &-todo{
-                margin-left:10px;
-                background-color: transparent;
-                color:white;
+                margin-left:$mainSize;
+                background-color: map-get($background-colors,"trans");
+                color:map-get($colors,"second");
                 border:none;
                 font-size:14px;
             }
@@ -59,51 +57,49 @@
     }
     &__list{
         &-todo{
-            background-color: hsl(235, 24%, 19%);
-            border-bottom:1px solid hsl(233, 14%, 35%);
-            border-radius:5px 5px 0 0;
+            background-color: map-get($background-colors,"darkgray");
+            border-radius:5px;
+            margin-top:5px;
             padding:15px;
             display:flex;
             justify-content: space-between;
             &-btn{
                 height:20px;
                 width:20px;
-                border:1px solid hsl(233, 14%, 35%);
+                border:1px solidmap-get($colors,"border");
                 border-radius: 50%;
-                background-color: transparent;
+                background-color: map-get($background-colors,"trans");
                 cursor:pointer;
             }
             &-delete{
-                border:none;
-                background-color: transparent;
-                cursor:pointer;
+                @include buttons;
+                background-color: map-get($background-colors,"trans");
             }
         }
     }
     &__controls{
-        margin-top:10px;
-        background-color:hsl(235, 24%, 19%);
+        border-radius:5px;
+        margin-top:$mainSize;
+        background-color: map-get($background-colors,"darkgray");
         .main__control{
-            margin:0 auto;
-            width:60%;
             display:flex;
-            justify-content:space-around;
-            align-items:center;
+            @include flex(row,center,space-around);
+            width:60%;
             height:40px;
+            margin:0 auto;
             border-radius:5px;
             &-result{
                 font-size:10px;
-                color:#777a92;
+                color:map-get($colors,"third");
             }
             &-btn{
-                border:none;
-                background-color: transparent;
-                color:hsl(234, 39%, 85%);
                 height:100%;
                 flex-grow:1;
-                cursor:pointer;
+                background-color: map-get($background-colors,"trans");
+                @include buttons;
+                color:map-get($colors,"btn");
                 &:hover{
-                    color:hsl(234, 11%, 52%);
+                    color:map-get($colors,"btn");
                 }
             }
         }
@@ -116,5 +112,4 @@
 }
 .main__list-todo[data-complete="complete"] p{
     text-decoration:line-through;
-    color:red;
 }

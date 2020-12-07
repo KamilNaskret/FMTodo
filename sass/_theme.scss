@@ -1,29 +1,28 @@
 .wrapper.light{
-    background-color: hsl(0, 0%, 85%);
+    background-color: map-get($background-colors,"gray");
     .header{
         background-image: url("../../images/bg-mobile-light.jpg");
     }
     .main__form .form__container{
-        background-color: #fff;
+        background-color: map-get($background-colors,"white");
         &-todo{
-            color:hsl(235, 19%, 35%);
+            color:map-get($colors,"main");
         }
     }
     .main__controls{
-        background-color: #fff;
+        background-color: map-get($background-colors,"white");
         
     }
     .main__controls .main__control-btn{
-        color:hsl(233, 14%, 35%);
+        color:map-get($colors,"border");
     }
     .main__list-todo{
-        background-color: #fff;
-        color:hsl(233, 14%, 35%);
+        background-color: map-get($background-colors,"white");
+        color:map-get($colors,"border");
     }
 }
 @media(min-width:720px){
     .wrapper.light{
-        background-color: hsl(0, 0%, 85%);
         .header{
             background-image: url("../../images/bg-desktop-light.jpg");
         }
