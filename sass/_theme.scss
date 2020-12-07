@@ -1,0 +1,23 @@
+.wrapper.light{
+    background-color: hsl(0, 0%, 85%);
+    .header{
+        background-image: url("../../images/bg-mobile-light.jpg");
+    }
+    .main__form .form__container{
+        background-color: #fff;
+        &-todo{
+            color:hsl(235, 19%, 35%);
+        }
+    }
+    .main__controls{
+        background-color: #fff;
+        
+    }
+    .main__controls .main__control-btn{
+        color:hsl(233, 14%, 35%);
+    }
+    .main__list-todo{
+        background-color: #fff;
+        color:hsl(233, 14%, 35%);
+    }
+}

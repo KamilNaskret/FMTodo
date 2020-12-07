@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Kamil Naskręt - Todo App</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,700;1,400&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="./dist/css/main.css">
+  <script defer src="./script/main.js"></script>
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+
+    <header class="header"></header>
+    <main class="main">
+      <div class="main__form">
+        <div class="form__header">
+          <h1 class="form__header-title">
+            Todo
+          </h1>
+          <button class="form__header-theme" data-theme>
+            <img src="./images/icon-sun.svg" alt="light-theme">
+          </button>
+        </div>
+        <div class="form__container">
+          <form class="form__container-add" data-todo>
+            <button class="form__container-check" data-succesful>
+            </button>
+            <input type="text" class="form__container-todo" placeholder="Create a new todo..." data-add>
+          </form>
+        </div>
+    </div>
+    <div class="main__list" data-list>
+      
+    </div>
+    <div class="main__controls">
+      <div class="main__control">
+        <p class="main__control-result" data-items></p>
+        <button class="main__control-btn" data-all>All</button>
+        <button class="main__control-btn" data-active>Active</button>
+        <button class="main__control-btn" data-completed>Completed</button>
+      </div>
+    </div>
+    </main>
+
+  </div>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">TechKami</a>.
+  </div>
+</body>
+</html>
